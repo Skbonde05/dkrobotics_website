@@ -1,0 +1,871 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - DK Robotics Automation</title>
+    <link rel="icon" type="pictures/png" href="pictures/favicon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Global Styles */
+        :root {
+            --main-color: #0c2e60;
+            --accent-color: #ea0669;
+            --txt-white: #ffffff;
+            --second-color: #555555;
+            --dark-bg: #141a19;
+        }
+        
+        body {
+            font-family: 'Roboto Condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        /* Password Protection Overlay */
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            flex-direction: column;
+            color: white;
+        }
+        
+        .password-form {
+            background: var(--dark-bg);
+            padding: 40px;
+            border-radius: 8px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        
+        .password-form h2 {
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+        
+        .password-input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid var(--accent-color);
+            border-radius: 4px;
+            font-size: 1rem;
+            background: #222;
+            color: white;
+        }
+        
+        .password-submit {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .password-submit:hover {
+            background: #d80042;
+        }
+        
+         /* Header Styles - Fixed */
+    header {
+      height: 100px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      font-family: "Oswald", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      background: linear-gradient(180deg, rgba(29, 29, 29, 0.8) 0%, rgba(29, 29, 29, 1) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      z-index: 99;
+      color: white;
+    }
+
+    .logos img {
+      margin-left: 60px;
+      height: 80px;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        z-index: 1001;
+    }
+    .main-menu-wrapper {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .main-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-left: 100px;
+    }
+
+    .main-menu > li > a {
+      text-transform: capitalize;
+      font-size: 1.1rem;
+      color: #bbbbbb;
+      font-weight: bold;
+      padding: 10px 15px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .main-menu > li ~ li {
+      margin-left: 10px;
+    }
+
+    .main-menu > li > a:hover,
+    .main-menu > li > a.active {
+      color: var(--accent-color);
+    }
+
+    .user-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-right: 150px;
+    }
+
+    .user-menu > li > a {
+      font-size: 1.3rem;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .user-menu > li > a:hover {
+      color: var(--accent-color);
+    }
+
+    .user-menu > li ~ li {
+      margin-left: 20px;
+    }
+
+    /* Content Wrapper */
+    .content-wrapper {
+        padding-top: 100px;
+        display: none; /* Hidden until password is entered */
+    }
+
+    /* Projects Section */
+    .projects-section {
+        padding: 60px 0;
+    }
+        
+        .project-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .project-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            aspect-ratio: 16/9;
+        }
+        
+        .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .project-video {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .project-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+        }
+        
+        .project-item:hover .play-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        /* Video Modal */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-modal.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+        
+        .modal-content {
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+        }
+        
+        .modal-content video {
+            width: 100%;
+            max-height: 80vh;
+            display: block;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+        
+        /* Footer */
+        .about-footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-brand {
+            padding-right: 20px;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-about {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .links-column h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+.links-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .links-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .links-column a {
+            color: #aaa;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .links-column a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-map h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .map-container {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #444;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .project-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+        font-size: 1.2rem;
+        top: 34px;
+        margin-right: 20px;
+      }
+      
+      .main-menu-wrapper {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        width: 100%;
+        height: 0; /* Start with height 0 */
+        background: #0d0d0d;
+        padding: 0 20px;
+        transition: all 0.3s ease;
+        flex-direction: column;
+        justify-content: flex-start;
+        overflow: hidden; /* Hide overflow */
+    }
+    
+    .main-menu-wrapper.active {
+        height: calc(100vh - 100px);
+        padding: 20px; /* Add padding when active */
+    }
+      
+      .main-menu {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+      
+      .main-menu li {
+        margin: 15px 0 !important;
+      }
+
+      .main-menu a {
+            color: white;
+            font-size: 1.2rem;
+            padding: 10px 0;
+            display: block;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .main-menu a:hover {
+            background: #1a1a1a;
+            border-radius: 5px;
+        }
+      
+      .user-menu {
+        margin-top: 20px;
+        margin-right: 80px;
+      }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .project-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            header {
+                padding: 0 15px;
+            }
+
+            .logos img {
+                height: 50px;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .modal-content {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Password Protection Overlay -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-form">
+            <h2>Enter Password to Access Projects</h2>
+            <input type="password" class="password-input" id="passwordInput" placeholder="Enter password">
+            <button class="password-submit" id="passwordSubmit">Submit</button>
+            <p id="errorMessage" style="color: var(--accent-color); margin-top: 10px; display: none;">Incorrect password. Please try again.</p>
+        </div>
+    </div>
+
+    <!-- Header - Matched to Contact Page -->
+    <header>
+        <a class="logos">
+            <img src="./pictures/dk.png" alt="DK Robotics Logo">
+        </a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="main-menu-wrapper">
+            <ul class="main-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dresspack.html">Dress Pack</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="projects.html" class="active">Projects</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+            </ul>
+        </div>
+        <ul class="user-menu">
+            <li><a href="https://in.linkedin.com/in/d-k-robotics-automation-0aaa2223a?trk=public_post_follow-view-profile"><i class='bx bxl-linkedin'></i></a></li>
+            <li><a href="https://roboprogramming.blogspot.com/"><i class='bx bxl-blogger'></i></a></li>
+        </ul>
+    </header>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper" id="contentWrapper">
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="project-container">
+                <div class="section-title">
+                    <h2>Our Automation Projects</h2>
+                    <p>Innovative solutions that drive industrial efficiency</p>
+                </div>
+                
+                <div class="project-grid">
+                    <!-- Project 1 -->
+                    <div class="project-item" data-video="./videos/Robotic Oxygen Lancing_3.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Robotic Oxygen Lancing_3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-item" data-video="./videos/Robotic MiG Welding to Flanges_Elbow.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Robotic MiG Welding to Flanges_Elbow.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-item" data-video="./videos/Robotic MiG Welding Vertical positioner.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Robotic MiG Welding Vertical positioner.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-item" data-video="./videos/Robotic MiG Welding with  horizontal Positioner.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Robotic MiG Welding with  horizontal Positioner.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 5 -->
+                    <div class="project-item" data-video="./videos/Outer Box Unloading_3.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Outer Box Unloading_3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 6 -->
+                    <div class="project-item" data-video="./videos/MiG welding Robot _RM.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/MiG welding Robot _RM.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 7 -->
+                    <div class="project-item" data-video="./videos/MiG Welding Robot.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/MiG Welding Robot.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 8 -->
+                    <div class="project-item" data-video="./videos/Machine Tending Robot.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Machine Tending Robot.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 9 -->
+                    <div class="project-item" data-video="./videos/Machine Tending Video-1.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Machine Tending Video-1.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 10 -->
+                    <div class="project-item" data-video="./videos/Casting Extraction robot cell.mp4">
+                        <div class="project-video">
+                            <video muted loop>
+                                <source src="./videos/Casting Extraction robot cell.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="play-icon">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <video controls id="modalVideo">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="about-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="./pictures/dk.png" alt="DK Robotics Logo">
+                </a>
+                <p class="footer-about">
+                    Founded in 2022, DK Robotics delivers affordable automation solutions with excellent customer service.
+                </p>
+                <div class="footer-social">
+                    <a href="https://dkrobotics.in/" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="https://linkedin.com/company/dk-robotics" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://roboprogramming.blogspot.com/" aria-label="Blog"><i class="fab fa-blogger"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="links-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about us.html">About Us</a></li>
+                        <li><a href="dresspack.html">Dress Pack</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-map">
+                <h4>Our Location</h4>
+                <div class="map-container">
+                    <iframe 
+                            src="https://maps.google.com/maps?q=DK%20ROBOTICS%20AUTOMATION&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            aria-label="DK Robotics Location Map"
+                            class="responsive-map">
+                        </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 DK Robotics Automation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Password Protection
+        const correctPassword = "DK2025"; // Change this to your desired password
+        const passwordOverlay = document.getElementById('passwordOverlay');
+        const contentWrapper = document.getElementById('contentWrapper');
+        const passwordInput = document.getElementById('passwordInput');
+        const passwordSubmit = document.getElementById('passwordSubmit');
+        const errorMessage = document.getElementById('errorMessage');
+        
+        // Check if password is already entered
+        if(sessionStorage.getItem('authenticated')) {
+            passwordOverlay.style.display = 'none';
+            contentWrapper.style.display = 'block';
+        }
+        
+        passwordSubmit.addEventListener('click', () => {
+            if(passwordInput.value === correctPassword) {
+                sessionStorage.setItem('authenticated', 'true');
+                passwordOverlay.style.display = 'none';
+                contentWrapper.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'block';
+                passwordInput.value = '';
+            }
+        });
+        
+        // Allow Enter key to submit password
+        passwordInput.addEventListener('keypress', (e) => {
+            if(e.key === 'Enter') {
+                passwordSubmit.click();
+            }
+        });
+        
+        // Video Modal Functionality
+        const videoModal = document.getElementById('videoModal');
+        const modalVideo = document.getElementById('modalVideo');
+        const closeModal = document.querySelector('.close-modal');
+        const projectItems = document.querySelectorAll('.project-item');
+        
+        projectItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const videoSrc = item.getAttribute('data-video');
+                modalVideo.src = videoSrc;
+                videoModal.classList.add('active');
+                modalVideo.play();
+                
+                // Pause all other videos in the grid
+                document.querySelectorAll('.project-video video').forEach(vid => {
+                    if (vid !== modalVideo) {
+                        vid.pause();
+                        vid.currentTime = 0;
+                    }
+                });
+            });
+        });
+        
+        closeModal.addEventListener('click', () => {
+            videoModal.classList.remove('active');
+            modalVideo.pause();
+            modalVideo.currentTime = 0;
+        });
+        
+        videoModal.addEventListener('click', (e) => {
+            if(e.target === videoModal) {
+                videoModal.classList.remove('active');
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+        });
+        
+        // Video Autoplay on Hover in Grid
+        document.addEventListener('DOMContentLoaded', () => {
+            const videos = document.querySelectorAll('.project-video video');
+            
+            videos.forEach(video => {
+                const parentItem = video.closest('.project-item');
+                
+                parentItem.addEventListener('mouseenter', () => {
+                    video.play();
+                });
+                
+                parentItem.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.main-menu-wrapper').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

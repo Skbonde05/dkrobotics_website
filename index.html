@@ -1,0 +1,976 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="pWo1qSJhrKGfPVB91Xbksya0fagZAKZd6M5cXgrDm70" />
+    <title>DK Robotics</title>
+    <link rel="icon" type="pictures/png" href="pictures/favicon.png">
+
+    <link rel="stylesheet" href="./styles/css/dk.min.css">
+    <link rel="stylesheet" href="./grid.css">
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Hero Section Styles */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            overflow: hidden;
+            padding: 0 20px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('./pictures/machine tending robot.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: blur(5px) brightness(0.6);
+            z-index: -1;
+        }
+        
+        .hero-content {
+            font-family: 'MyriadProCondensed', sans-serif;
+            margin-top: 120px;
+            max-width: 800px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+        }
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #ea0669;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-btn:hover {
+            background: #c00558;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive styles */
+        @media (max-width: 1200px) {
+            .col-4 {
+                width: 50%;
+            }
+            .col-3 {
+                width: 50%;
+            }
+            .col-6 {
+                width: 50%;
+            }
+            .col-7 {
+                width: 100%;
+            }
+            .col-5 {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .product-card-large {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+        
+            .logos img {
+                height: 50px;
+                margin-top: 10px;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                font-size: 1.2rem; /* Reduced from 1.8rem */
+                position: relative; /* Changed from absolute */
+                right: auto;
+                top: auto;
+                margin: 0;
+                z-index: 1001;
+                color: white;
+                padding-bottom: 20px;
+                padding: 5px; /* Added for better touch target */
+            }
+
+            .main-menu-wrapper {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--dark-bg);
+                padding: 20px;
+                flex-direction: column;
+                align-items: center;
+                transition: var(--transition);
+                overflow-y: auto;
+                background: #0d0d0d; /* deep dark background */
+                color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+                order: 4;
+                top: 80px;
+                z-index: 1000;
+            }
+             .main-menu-wrapper.active {
+                left: 0;
+            }
+
+           .user-menu {
+                margin-right: 80px;
+                margin-left: auto;
+                margin-bottom: 20px;
+                display: none;
+            }
+            .main-menu {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .main-menu li {
+                margin: 15px 0 !important;
+            }
+
+            .main-menu a {
+                color: white;
+                font-size: 1.2rem;
+                padding: 10px 0;
+                display: block;
+                width: 100%;
+                text-align: center;
+                text-decoration: none;
+                }
+                .main-menu a:hover {
+                background: #1a1a1a;
+                border-radius: 5px;
+            }
+            
+            .col-4, .col-3, .col-6 {
+                width: 100%;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-description {
+                font-size: 1rem;
+            }
+            
+            .special-img img {
+                max-width: 100%;
+            }
+            
+            iframe {
+                width: 100%;
+                height: 250px;
+            }
+            
+            .footer-menu {
+                margin-bottom: 20px;
+            }
+            .footer-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 25px;
+            }
+        }
+            @media (max-width: 576px) {
+            header {
+                padding: 0 15px;
+            }
+
+            .logos img {
+                height: 60px;
+                margin-left: 0;
+            }
+
+            .contact-info,
+            .contact-form {
+                padding: 25px 20px;
+            }
+
+            .form-group label {
+                font-size: 0.95rem;
+            }
+
+            .form-control {
+                font-size: 0.95rem;
+                padding: 10px 12px;
+            }
+
+            .submit-btn {
+                width: 100%;
+            }
+
+            .contact-hero {
+                padding: 130px 20px 40px;
+            }
+
+            .contact-hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .contact-hero p {
+                font-size: 0.95rem;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                gap: 6px;
+            }
+            }
+
+        .menu-toggle {
+            display: block;
+            cursor: pointer;
+            font-size: 1.8rem;
+            position: absolute;
+            right: 20px;
+            top: 30px;
+            z-index: 1001;
+            color: white;
+        }
+
+        @media (min-width: 769px) {
+        .menu-toggle {
+             display: none;
+        }
+
+        .main-menu-wrapper {
+            position: static;
+            height: auto;
+            flex-direction: row;
+            align-items: center;
+            background: transparent;
+            padding: 0;
+            left: 0 !important;
+        }
+
+        .main-menu {
+            flex-direction: row;
+            gap: 25px;
+            width: auto;
+        }
+
+        .main-menu li {
+            margin: 0 !important;
+        }
+        }
+
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            
+            .hero-description {
+                font-size: 0.9rem;
+            }
+            
+            .section-title .main-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title .second-title {
+                font-size: 1rem;
+            }
+            
+            .product-name, .product-namee {
+                font-size: 1rem;
+            }
+            
+        }
+        /* General responsive improvements */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- header -->
+    <header>
+        <a href="#" class="logos">
+            <img src="pictures/dk.png" alt="DK Robotics Logo">
+        </a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="main-menu-wrapper">
+            <ul class="main-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="dresspack.html">Dress Pack</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about us.html">About</a></li>
+                <li><a href="contact us.html">Contact</a></li>
+            </ul>
+        </div>
+        <ul class="user-menu">
+            <li><a href="https://in.linkedin.com/in/d-k-robotics-automation-0aaa2223a?trk=public_post_follow-view-profile"><i class='bx bxl-linkedin'></i></a></li>
+            <li><a href="https://roboprogramming.blogspot.com/"><i class='bx bxl-blogger'></i></a></li>
+        </ul>
+    </header>
+
+    <!-- end header -->
+
+    <!-- hero section -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">DK Robotics Automation</h1>
+            <p class="hero-description">
+                D K Robotics was founded in year 2022 by two young professionals aiming to deliver affordable automation
+                solutions with excellent customer service & consistent quality in timeline.
+                <br><br>
+                D K Robotics Automation provides Turnkey Robotics Automation Solutions and industrial Robotic
+                Programming Services to industries. Affordable Automation, Robotic Integration, Engineering Solutions, and
+                Services for Industrial Companies. We work with some of the largest industrial companies across many
+                fields, including automotive, Forging, Foundries, Domestic Appliances, Engineering, Fabrication industries
+                and many more.
+            </p>
+            <a href="about us.html" class="hero-btn">Learn More</a>
+        </div>
+    </div>
+    <!-- end hero section -->
+<!-- Replace the Robot Category section with this code -->
+<div class="section">
+    <div class="section-title">
+        <h3 class="second-title to-right show-on-scroll">Our Expertise</h3>
+        <h3 class="main-title to-left show-on-scroll">DK Robotics Automation</h3>
+    </div>
+    <div class="section-content">
+        <div class="row">
+            <div class="col-12">
+                <p class="portfolio-description to-top show-on-scroll">
+                    D K Robotics Automation is an industrial automation company dealing in robotics & PLC Automation Products
+                </p>
+            </div>
+        </div>
+        
+        <div class="row expertise-row">
+            <!-- Application Expertise -->
+            <div class="col-4 to-top show-on-scroll">
+                <div class="expertise-card">
+                    <div class="expertise-header">
+                        <i class='bx bx-cog expertise-icon'></i>
+                        <h3 class="expertise-title">Application Expertise</h3>
+                    </div>
+                    <ul class="expertise-list">
+                        <li><i class='bx bx-check'></i> Robotic pick and place</li>
+                        <li><i class='bx bx-check'></i> CNC & Press machine tending</li>
+                        <li><i class='bx bx-check'></i> TIG / MiG welding</li>
+                        <li><i class='bx bx-check'></i> Laser welding</li>
+                        <li><i class='bx bx-check'></i> Material handling</li>
+                        <li><i class='bx bx-check'></i> Palletizing</li>
+                        <li><i class='bx bx-check'></i> Deburring / grinding</li>
+                        <li><i class='bx bx-check'></i> Sheet metal bending</li>
+                        <li><i class='bx bx-check'></i> Spot welding</li>
+                        <li><i class='bx bx-check'></i> Hot metal handling in forging and foundries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Programming -->
+            <div class="col-4 to-top show-on-scroll">
+                <div class="expertise-card">
+                    <div class="expertise-header">
+                        <i class='bx bx-code-alt expertise-icon'></i>
+                        <h3 class="expertise-title">Programming</h3>
+                    </div>
+                    <ul class="expertise-list">
+                        <li><i class='bx bx-check'></i> Robot programming & path check</li>
+                        <li><i class='bx bx-check'></i> System Auto trials and part quality prove out</li>
+                        <li><i class='bx bx-check'></i> Cycle Time Optimization</li>
+                        <li><i class='bx bx-check'></i> Production Support</li>
+                        <li><i class='bx bx-check'></i> Quality prove out support</li>
+                        <li><i class='bx bx-check'></i> Robot calibration</li>
+                        <li><i class='bx bx-check'></i> OLP applications</li>
+                        <li><i class='bx bx-check'></i> Robot to PLC communication</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Industries Served -->
+            <div class="col-4 to-top show-on-scroll">
+                <div class="expertise-card">
+                    <div class="expertise-header">
+                        <i class="fas fa-industry expertise-icon"></i> <!-- More detailed factory -->
+                        <h3 class="expertise-title">Industries Served</h3>
+                    </div>
+                    <ul class="expertise-list">
+                        <li><i class='bx bx-check'></i> Automotive</li>
+                        <li><i class='bx bx-check'></i> Forging</li>
+                        <li><i class='bx bx-check'></i> Foundry</li>
+                        <li><i class='bx bx-check'></i> Engineering</li>
+                        <li><i class='bx bx-check'></i> Domestic appliances</li>
+                        <li><i class='bx bx-check'></i> Leather</li>
+                        <li><i class='bx bx-check'></i> Pharmaceutical</li>
+                        <li><i class='bx bx-check'></i> Sheet Metal Industries</li>
+                        <li><i class='bx bx-check'></i> Precision Machining</li>
+                        <li><i class='bx bx-check'></i> System Integrators</li>
+                        <li><i class='bx bx-check'></i> Fabrication</li>
+                        <li><i class='bx bx-check'></i> Machine Manufacturers</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+    <!-- special bike -->
+    <div class="section special-section">
+        <div class="section-title">
+            <h3 class="second-title to-left show-on-scroll">
+                DK Robotics
+            </h3>
+            <h3 class="main-title to-right show-on-scroll">Best Seller FUNAC</h3>
+            
+        </div>
+        <div class="special-img">
+            <img src="./pictures/BS.jpg" alt="Best Seller FUNAC" class="to-left show-on-scroll">
+        </div>
+    </div>
+    <!-- end special bike -->
+
+   <!-- Replace the "Services We Provide" section with this code -->
+<div class="section">
+    <div class="section-title">
+        <h3 class="second-title to-right show-on-scroll">Business Portfolio</h3>
+        <h3 class="main-title to-left show-on-scroll">Our Services</h3>
+    </div>
+    <div class="section-content">
+        <div class="row">
+            <div class="col-12">
+                <p class="portfolio-description to-top show-on-scroll">
+                    D K Automation has rich experience in robot programming, Robot maintenance, Spares Management and Installation and Commissioning Services.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row services-row">
+            <!-- Installation Services -->
+            <div class="col-6 to-top show-on-scroll">
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class='bx bx-wrench service-icon'></i>
+                        <h3 class="service-title">Installation</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Layout marking and cell installation support</li>
+                        <li><i class='bx bx-check'></i> Robot initial set up, power up and configuration</li>
+                        <li><i class='bx bx-check'></i> Robot Tool/EOAT setup</li>
+                        <li><i class='bx bx-check'></i> IO communication setup with PLC and Peripherals</li>
+                        <li><i class='bx bx-check'></i> Pneumatics arrangement</li>
+                        <li><i class='bx bx-check'></i> Dress pack Management</li>
+                        <li><i class='bx bx-check'></i> Safety Fence</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Maintenance Services -->
+            <div class="col-6 to-top show-on-scroll">
+                <div class="service-card">
+                    <div class="service-header">
+                        <i class='bx bx-cog service-icon'></i>
+                        <h3 class="service-title">Maintenance</h3>
+                    </div>
+                    <ul class="service-list">
+                        <li><i class='bx bx-check'></i> Preventive Maintenance</li>
+                        <li><i class='bx bx-check'></i> Breakdown Maintenance</li>
+                        <li><i class='bx bx-check'></i> Annual Maintenance Contract</li>
+                        <li><i class='bx bx-check'></i> Battery Replacement</li>
+                        <li><i class='bx bx-check'></i> Lubrication</li>
+                        <li><i class='bx bx-check'></i> Refurbishment</li>
+                        <li><i class='bx bx-check'></i> Spares availability</li>
+                        <li><i class='bx bx-check'></i> Verification of running noise, adjustment and check</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Add this after the Business Portfolio section -->
+<div class="section">
+    <div class="section-title">
+        <h3 class="second-title to-right show-on-scroll">Extended Capabilities</h3>
+        <h3 class="main-title to-left show-on-scroll">Other Activities</h3>
+    </div>
+    <div class="section-content">
+        <div class="row professional-activities">
+    <div class="col-12">
+        <div class="activities-container to-top show-on-scroll">
+            <ul class="enhanced-activities-list">
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class='bx bx-code-alt'></i>
+                        </div>
+                        <div class="activity-text">
+                            <h4 class="activity-title">PLC/HMI/VFD Programming</h4>
+                            <p class="activity-description">Comprehensive programming support for Mitsubishi, Siemens, Delta, and Allen Bradley systems</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class='bx bx-cog'></i>
+                        </div>
+                        <div class="activity-text">
+                            <h4 class="activity-title">Control Panel Manufacturing</h4>
+                            <p class="activity-description">Custom control panels designed and built for various PLC applications</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class='bx bx-chip'></i>
+                        </div>
+                        <div class="activity-text">
+                            <h4 class="activity-title">MCC Panel Solutions</h4>
+                            <p class="activity-description">Professional manufacturing and installation of Motor Control Center panels</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class='bx bx-trending-up'></i>
+                        </div>
+                        <div class="activity-text">
+                            <h4 class="activity-title">System Upgrades</h4>
+                            <p class="activity-description">Robot and PLC system modernization with minimal downtime</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class='bx bx-clipboard'></i>
+                        </div>
+                        <div class="activity-text">
+                            <h4 class="activity-title">Project Management</h4>
+                            <p class="activity-description">Expert consultancy to ensure projects stay on schedule and budget</p>
+                        </div>
+                    </div>
+                </li>
+                
+                <li class="activity-item">
+                    <div class="activity-content">
+                        <div class="activity-icon">
+                            <i class='bx bx-file'></i>
+                        </div>
+                        <div class="activity-text">
+                            <h4 class="activity-title">Technical Documentation</h4>
+                            <p class="activity-description">Comprehensive documentation for maintenance and compliance</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+        
+        <!-- Brand Images Row -->
+        <div class="row brands-row to-top show-on-scroll">
+            <div class="col-12">
+                <h4 class="brands-title">Supported Brands</h4>
+                <div class="brands-container">
+                    <div class="brand-item">
+                        <img src="./pictures/PR3.jpg" alt="FANUC" class="brand-logo">
+                    </div>
+                    <div class="brand-item">
+                        <img src="./pictures/P2.jpg" alt="Kawasaki" class="brand-logo">
+                    </div>
+                    <div class="brand-item">
+                        <img src="./pictures/P6.jpg" alt="ABB" class="brand-logo">
+                    </div>
+                    <div class="brand-item">
+                        <img src="./pictures/P7.jpg" alt="YASKAWA" class="brand-logo">
+                    </div>
+                    <div class="brand-item">
+                        <img src="./pictures/P8.jpg" alt="KUKA" class="brand-logo">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Add this after the Other Activities section -->
+<div class="section">
+    <div class="section-title">
+        <h3 class="second-title to-right show-on-scroll">Product Portfolio</h3>
+        <h3 class="main-title to-left show-on-scroll">Automation Products</h3>
+    </div>
+    <div class="section-content">
+        <div class="row">
+            <div class="col-12">
+                <p class="products-intro to-top show-on-scroll">
+                    D K Robotics also deals in automation products of various brands as per customer requirement.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row products-row">
+            <!-- Column 1 -->
+            <div class="col-3 to-top show-on-scroll">
+                <div class="product-category-card">
+                    <div class="category-header">
+                        <i class='bx bx-chip product-icon'></i>
+                        <h4 class="category-title">PROGRAMMABLE LOGIC CONTROLLER</h4>
+                    </div>
+                    <ul class="product-list">
+                        <li><i class='bx bx-check'></i> PLC CPU</li>
+                        <li><i class='bx bx-check'></i> Input Cards</li>
+                        <li><i class='bx bx-check'></i> Output Cards</li>
+                        <li><i class='bx bx-check'></i> Communication Cards</li>
+                        <li><i class='bx bx-check'></i> Remote IO modules</li>
+                        <li><i class='bx bx-check'></i> Power supply</li>
+                        <li><i class='bx bx-check'></i> Programming Cables</li>
+                        <li><i class='bx bx-check'></i> Safety Modules</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="col-3 to-top show-on-scroll">
+                <div class="product-category-card">
+                    <div class="category-header">
+                        <i class='bx bx-radar product-icon'></i>
+                        <h4 class="category-title">SENSORS</h4>
+                    </div>
+                    <ul class="product-list">
+                        <li><i class='bx bx-check'></i> Inductive Proximity</li>
+                        <li><i class='bx bx-check'></i> Photoelectric sensors</li>
+                        <li><i class='bx bx-check'></i> Retroreflective</li>
+                        <li><i class='bx bx-check'></i> Diffuse sensors</li>
+                        <li><i class='bx bx-check'></i> Laser distance sensor</li>
+                        <li><i class='bx bx-check'></i> Ultrasonic sensors</li>
+                        <li><i class='bx bx-check'></i> Fiber optic sensor</li>
+                        <li><i class='bx bx-check'></i> Limit switches</li>
+                        <li><i class='bx bx-check'></i> Safety Switches</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Column 3 -->
+            <div class="col-3 to-top show-on-scroll">
+                <div class="product-category-card">
+                    <div class="category-header">
+                        <i class='bx bx-cog product-icon'></i>
+                        <h4 class="category-title">ROBOT SPARES</h4>
+                    </div>
+                    <ul class="product-list">
+                        <li><i class='bx bx-check'></i> Encoder cable</li>
+                        <li><i class='bx bx-check'></i> Teach Pendant cable</li>
+                        <li><i class='bx bx-check'></i> Robot Power supply</li>
+                        <li><i class='bx bx-check'></i> Robot battery</li>
+                        <li><i class='bx bx-check'></i> Encoders</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Column 4 -->
+            <div class="col-3 to-top show-on-scroll">
+                <div class="product-category-card">
+                    <div class="category-header">
+                        <i class='bx bx-slider-alt product-icon'></i>
+                        <h4 class="category-title">OTHER PRODUCTS</h4>
+                    </div>
+                    <ul class="product-list">
+                        <li><i class='bx bx-check'></i> HMI</li>
+                        <li><i class='bx bx-check'></i> VFD</li>
+                        <li><i class='bx bx-check'></i> Safety Modules</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- Trusted Partners Section -->
+<div class="section">
+    <div class="section-title">
+        <h3 class="second-title to-right show-on-scroll">Industry Leaders</h3>
+        <h3 class="main-title to-left show-on-scroll">Trusted Partners</h3>
+    </div>
+    
+    <div class="section-content">
+        <div class="row">
+            <div class="col-12">
+                <p class="partners-intro to-top show-on-scroll">
+                    D K Robotics partners with industry leaders to provide top-notch automation solutions.
+                </p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Company 1 -->
+            <div class="col-4">
+                <div class="partner-card to-top show-on-scroll">
+                    <div class="partner-logo-container">
+                        <div class="partner-logo" style="background-image: url('./pictures/C1T.jpg');"></div>
+                        <div class="partner-overlay">
+                            <a href="https://in.linkedin.com/company/kalyani-technoforge-limited" class="btn btn-outline">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="partner-info">
+                        <h3 class="partner-name">Kalyani Technoforge</h3>
+                        <p class="partner-description">
+                            Emerging as the fastest growing leader in world-class forgings and machined components, 
+                            sub-assemblies and assemblies. A manufacturing partner for renowned brands in the auto 
+                            and non-auto sectors since 1979.
+                        </p>
+                        <div class="partner-tags">
+                            <span class="industry-tag">Automotive</span>
+                            <span class="industry-tag">Forgings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Company 2 -->
+            <div class="col-4">
+                <div class="partner-card to-top show-on-scroll">
+                    <div class="partner-logo-container">
+                        <div class="partner-logo" style="background-image: url('./pictures/C1.jpg');"></div>
+                        <div class="partner-overlay">
+                            <a href="https://wheelsindia.com/" class="btn btn-outline">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="partner-info">
+                        <h3 class="partner-name">Wheels India Limited</h3>
+                        <p class="partner-description">
+                            Among the world's largest manufacturers of steel and aluminum wheels since 1960. 
+                            Expanded portfolio to include bus and truck chassis through strategic diversification 
+                            and continuous engineering enhancement.
+                        </p>
+                        <div class="partner-tags">
+                            <span class="industry-tag">Wheel Manufacturing</span>
+                            <span class="industry-tag">Transportation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Company 3 -->
+            <div class="col-4">
+                <div class="partner-card to-top show-on-scroll">
+                    <div class="partner-logo-container">
+                        <div class="partner-logo" style="background-image: url('./pictures/C2.jpg');"></div>
+                        <div class="partner-overlay">
+                            <a href="https://www.tatametaliks.com/" class="btn btn-outline">View Profile</a>
+                        </div>
+                    </div>
+                    <div class="partner-info">
+                        <h3 class="partner-name">Tata Metaliks</h3>
+                        <p class="partner-description">
+                            Subsidiary of Tata Steel with state-of-the-art manufacturing in West Bengal. 
+                            Produces 6 lakh tonnes annually of pig iron and ductile iron pipes, serving 
+                            infrastructure and industrial sectors.
+                        </p>
+                        <div class="partner-tags">
+                            <span class="industry-tag">Metal Production</span>
+                            <span class="industry-tag">Infrastructure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- end news section -->
+<!-- Enhanced Footer with Location on Right -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-main-content">
+            <!-- Left Side - Brand Info -->
+            <div class="footer-brand">
+                <a class="footer-logo">
+                    <img src="./pictures/dk.png" alt="DK Robotics Logo" width="180">
+                </a>
+                <p class="company-description">
+                    Founded in 2022, DK Robotics delivers affordable automation solutions with excellent 
+                    customer service and consistent quality within timeline.
+                </p>
+                <div class="social-links">
+                    <a href="https://dkrobotics.in/" class="social-icon" target="_blank" rel="noopener" aria-label="Website">
+                        <i class='bx bx-globe'></i>
+                    </a>
+                    <a href="https://linkedin.com/company/dk-robotics" class="social-icon" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class='bx bxl-linkedin'></i>
+                    </a>
+                    <a href="https://roboprogramming.blogspot.com/" class="social-icon" target="_blank" rel="noopener" aria-label="Blog">
+                        <i class='bx bxl-blogger'></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Middle - Links -->
+            <div class="footer-links-container">
+                <div class="footer-links">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-nav">
+                        <li><a href="index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
+                        <li><a href="about us.html"><i class='bx bx-chevron-right'></i> About</a></li>
+                        <li><a href="dresspack.html"><i class='bx bx-chevron-right'></i> Dress Pack</a></li>
+                        <li><a href="contact us.html"><i class='bx bx-chevron-right'></i> Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h3 class="footer-heading">Resources</h3>
+                    <ul class="footer-nav">
+                        <li><a href="gallery.html"><i class='bx bx-chevron-right'></i> Gallery</a></li>
+                        <li><a href="projects.html"><i class='bx bx-chevron-right'></i> Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Right Side - Location -->
+            <div class="footer-location">
+                <h3 class="footer-heading">Our Location</h3>
+                <div class="map-container">
+                    <iframe 
+                        src="https://maps.google.com/maps?q=DK%20ROBOTICS%20AUTOMATION&output=embed"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        aria-label="DK Robotics Location Map"
+                        class="responsive-map">
+                    </iframe>
+                </div>
+                <div class="contact-info">
+                    <p><i class='bx bx-map'></i> Pune, Maharashtra, India</p>
+                    <p><i class='bx bx-time'></i> Mon-Fri: 9AM - 6PM</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                &copy; <span id="current-year">2025</span> DK Robotics Automation. All Rights Reserved.
+            </div>
+            <div class="legal-links">
+                <a href="privacypolicy.html">Privacy Policy</a>
+                <span class="divider">|</span>
+                <a href="terms.html">Terms of Service</a>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <script src="./app.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+        this.querySelector('i').classList.toggle('fa-bars');
+        this.querySelector('i').classList.toggle('fa-times');
+        document.querySelector('.main-menu-wrapper').classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function(event) {
+        const header = document.querySelector('header');
+        if (!header.contains(event.target) && 
+            document.querySelector('.main-menu-wrapper').classList.contains('active')) {
+            document.querySelector('.main-menu-wrapper').classList.remove('active');
+            document.querySelector('.menu-toggle i').classList.remove('fa-times');
+            document.querySelector('.menu-toggle i').classList.add('fa-bars');
+            document.body.classList.remove('no-scroll');
+        }
+        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Responsive adjustments
+        function adjustLayout() {
+            // You can add any dynamic layout adjustments here if needed
+        }
+
+        // Run on load and resize
+        window.addEventListener('load', adjustLayout);
+        window.addEventListener('resize', adjustLayout);
+
+        // Show elements on scroll
+        function showOnScroll() {
+            const elements = document.querySelectorAll('.show-on-scroll');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(elementPosition < screenPosition) {
+                    element.classList.add('show');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', showOnScroll);
+        window.addEventListener('load', showOnScroll);
+    </script>
+</body>
+</html>

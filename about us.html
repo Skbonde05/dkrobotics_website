@@ -1,0 +1,1044 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - DK Robotics Automation</title>
+    <link rel="icon" type="pictures/png" href="pictures/favicon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CSS -->
+    <style>
+        /* Global Styles */
+        :root {
+            --transition: all 0.3s ease;
+            --main-color: #0c2e60;
+            --accent-color: #ea0669;
+            --txt-white: #ffffff;
+            --second-color: #555555;
+            --dark-bg: #1d1d1d;
+        }
+        
+         body {
+            font-family: 'Roboto Condensed', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 100px; /* Add this line to prevent content hiding behind fixed header */
+        }
+
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: #d80042;
+            transform: translateY(-2px);
+        }
+        
+    /* Header Styles - Fixed */
+    header {
+      height: 100px;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      font-family: "Oswald", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+      background: linear-gradient(180deg, rgba(29, 29, 29, 0.8) 0%, rgba(29, 29, 29, 1) 100%) !important;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      z-index: 99;
+      color: white;
+    }
+
+    .logos img {
+      margin-left: 60px;
+      height: 80px;
+      order: 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: white;
+        position: absolute;
+        right: 30px;
+        top: 30px;
+        z-index: 1001;
+    }
+
+    .main-menu-wrapper {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .main-menu {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      margin-left: 100px;
+    }
+
+    .main-menu > li > a {
+      text-transform: capitalize;
+      font-size: 1.1rem;
+      color: #bbbbbb;
+      font-weight: bold;
+      padding: 10px 15px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .main-menu > li ~ li {
+      margin-left: 10px;
+    }
+
+    .main-menu > li > a:hover,
+    .main-menu > li > a.active {
+      color: var(--accent-color);
+    }
+
+    .user-menu {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      margin-left: 300px;
+      margin-right: 15px;
+    }
+
+    .user-menu > li > a {
+      font-size: 1.3rem;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .user-menu > li > a:hover {
+      color: var(--accent-color);
+    }
+
+    .user-menu > li ~ li {
+      margin-left: 20px;
+    }
+        /* About Hero Section */
+        .about-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('./pictures/bg2.png') no-repeat center center;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 140px 40px; /* Adjusted padding */
+            margin-top: -100px; /* Counteract the body padding */
+        }
+
+        
+        .hero-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+        
+        /* About Intro */
+        .about-intro {
+            padding: 60px 0;
+            background-color: var(--txt-white);
+            text-align: center;
+            position: relative; /* Ensure proper stacking */
+            z-index: 1; /* Keep above other elements */
+        }
+        
+        .about-intro p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto 1.5rem;
+            padding: 0 20px;
+            color: var(--second-color);
+        }
+        
+        /* Dress Pack Solutions Section */
+        .dresspack-section {
+            padding: 80px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+        
+        .dresspack-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .dresspack-card h3 {
+            color: var(--main-color);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .dresspack-card p {
+            color: var(--second-color);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .dresspack-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .feature-item {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            border-top: 3px solid var(--accent-color);
+        }
+        
+        .feature-item h4 {
+            color: var(--main-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .feature-item ul {
+            padding-left: 20px;
+        }
+        
+        .feature-item li {
+            margin-bottom: 10px;
+            color: var(--second-color);
+            position: relative;
+        }
+        
+        .feature-item li:before {
+            content: "•";
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: -20px;
+            top: -5px;
+        }
+        
+        .certificate-badge {
+            background: var(--accent-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        
+        /* Profiles Section */
+        .profiles-section {
+            padding: 80px 0;
+            background-image: url("./pictures/bg2.png");
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .profile-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .profile-card {
+            background: var(--txt-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+        }
+        
+        .profile-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(234, 6, 105, 0.1);
+        }
+        
+        .profile-preview {
+            height: 400px;
+            overflow: hidden;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pdf-preview {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .profile-info {
+            padding: 25px;
+        }
+        
+        .profile-info h3 {
+            color: var(--main-color);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .profile-info p {
+            color: var(--second-color);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            background: var(--accent-color);
+            color: var(--txt-white);
+            padding: 10px 20px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-download i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+        
+        .btn-download:hover {
+            background: #d80042;
+            transform: translateY(-2px);
+        }
+        
+        /* Team Section */
+        .team-section {
+            background-color: #222;
+            padding: 80px 0;
+        }
+        
+        .team-section .section-title h2 {
+            color: var(--txt-white);
+        }
+        
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 60px;
+            background: var(--txt-white);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .team-member img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 40px;
+            flex: 1;
+        }
+        
+        .member-info h2 {
+            color: var(--main-color);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+        }
+        
+        .member-info h5 {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .member-info p {
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: var(--second-color);
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 80px 0;
+            background-color: var(--txt-white);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .service-card {
+            background: var(--txt-white);
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(20, 1, 1, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-top: 4px solid var(--accent-color);
+            border-bottom: 4px solid var(--accent-color);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(245, 14, 114, 0.1);
+        }
+        
+        .service-card h5 {
+            font-size: 1.3rem;
+            color: var(--main-color);
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .service-card ul {
+            padding-left: 20px;
+            color: var(--second-color);
+            line-height: 1.7;
+        }
+        
+        .service-card li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .service-card li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            background: transparent;
+            color: var(--txt-white);
+            position: relative;
+            overflow: hidden;
+            border-top: 4px solid var(--accent-color);
+            border-radius: 20px;
+        }
+        
+        .cta-section p {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin-left: auto;
+            color: #000;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--txt-white);
+            padding: 15px 35px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            border: 2px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        .cta-btn:hover {
+            background: transparent;
+            color: #000;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        .about-footer {
+            background-color: #222;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-brand {
+            padding-right: 20px;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+            margin-bottom: 15px;
+        }
+        
+        .footer-about {
+            color: #aaa;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .footer-social a {
+            color: #fff;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        
+        .footer-social a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .links-column h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .links-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .links-column a {
+            color: #aaa;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .links-column a:hover {
+            color: var(--accent-color);
+        }
+        
+        .footer-map h4 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .map-container {
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #444;
+            color: #777;
+            font-size: 0.85rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .team-member {
+                flex-direction: column;
+            }
+            
+            .team-member img {
+                width: 100%;
+                height: 400px;
+            }
+            
+            .hero-title {
+                margin-top: 60px;
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 30px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+             header {
+                padding: 0 15px;
+                justify-content: space-between;
+            }
+            
+            .logos img {
+                height: 50px;
+                margin-left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+                font-size: 1.2rem;
+                position: static; /* Remove absolute positioning */
+                margin-left: auto; /* Push to the right */
+                order: 2; /* Reorder in flex layout */
+                margin-right: 50px; /* Reduce right margin */
+            }
+            
+            .user-menu {
+                display: none;
+            }
+            
+            .main-menu-wrapper {
+                position: fixed;
+                top: 100px;
+                left: 0;
+                width: 100%;
+                height: 0;
+                background: #0d0d0d;
+                padding: 0 20px;
+                transition: all 0.3s ease;
+                flex-direction: column;
+                justify-content: flex-start;
+                overflow: hidden;
+            }
+            
+            .main-menu-wrapper.active {
+                height: calc(100vh - 100px);
+                padding: 20px;
+            }
+            
+            .main-menu {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            
+            .main-menu > li {
+                margin: 10px 0 !important;
+            }
+
+            .section-title h2,
+            .section-title1 h2 {
+                font-size: 2rem;
+            }
+            
+            .cta-section p {
+                font-size: 1.4rem;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 250px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+           
+            .about-header {
+                padding: 60px 20px;
+                margin-top: -100px;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .profile-preview {
+                height: 300px;
+            }
+            
+            .member-info {
+                padding: 25px;
+            }
+            
+            .cta-section p {
+                font-size: 1.2rem;
+            }
+            
+            .cta-btn {
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+  <header>
+    <a href="index.html" class="logos">
+      <img src="./pictures/dk.png" alt="DK Robotics Logo">
+    </a>
+    <div class="menu-toggle">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="main-menu-wrapper">
+      <ul class="main-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dresspack.html">Dress Pack</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="about us.html" class="active">About</a></li>
+        <li><a href="contact us.html">Contact</a></li>
+      </ul>
+      <ul class="user-menu">
+        <li><a href="https://in.linkedin.com/in/d-k-robotics-automation-0aaa2223a?trk=public_post_follow-view-profile"><i class='bx bxl-linkedin'></i></a></li>
+        <li><a href="https://roboprogramming.blogspot.com/"><i class='bx bxl-blogger'></i></a></li>
+      </ul>
+    </div>
+  </header>
+
+
+    <!-- About Hero Section -->
+    <section class="about-header">
+        <h1 class="hero-title">About DK Robotics</h1>
+        <p class="hero-subtitle">Innovative Automation Solutions for the Modern Industry</p>
+    </section>
+
+    <!-- About Intro -->
+    <section class="about-intro">
+        <p>
+            DK Robotics Automation provides Turnkey Robotics Automation Solutions and industrial Robotic Programming Services to industries. Founded in 2022 by two young professionals, we aim to deliver affordable automation solutions with excellent customer service and consistent quality within timeline.
+        </p>
+        <p>
+            Our expertise in robotic integration and engineering solutions helps industrial companies streamline their operations and increase productivity through cutting-edge automation technology.
+        </p>
+    </section>
+
+    <!-- Profiles Section -->
+<section class="profiles-section">
+    <div class="section-title">
+        <h2 style="color: var(--txt-white);">Company Profiles</h2>
+    </div>
+    
+    <div class="profile-grid">
+        <!-- Corporate Profile Card -->
+        <div class="profile-card">
+            <div class="profile-preview">
+                <iframe src="./pictures/Profile_ D K Robotics.pdf" class="pdf-preview"></iframe>
+            </div>
+            <div class="profile-info">
+                <h3>Corporate Profile</h3>
+                <p><strong>D K Robotics Automation</strong> provides turnkey robotics solutions and industrial robotic programming services. Founded in 2022, we specialize in:</p>
+                <ul>
+                    <li>Affordable automation solutions</li>
+                    <li>Robotic integration & engineering</li>
+                    <li>Fanuc/ABB/Kuka robot programming</li>
+                    <li>PLC automation & control panels</li>
+                </ul>
+                <p>Serving automotive, forging, foundry, and 10+ other industries with a team of 7+ experts.</p>
+                <a href="./pictures/Profile_ D K Robotics.pdf" download="DK_Robotics_Corporate_Profile.pdf" class="btn-download">
+                    <i class='bx bx-download'></i> Download Full Profile
+                </a>
+            </div>
+        </div>
+        
+        <!-- Technical Capabilities Card -->
+        <div class="profile-card">
+            <div class="profile-preview">
+                <iframe src="./pictures/Robot Dress pack by D K Robotics.pdf" class="pdf-preview"></iframe>
+            </div>
+            <div class="profile-info">
+                <h3>Technical Capabilities</h3>
+                <p><strong>Dress Pack Solutions:</strong></p>
+                <ul>
+                    <li>High-corrugation flexible conduits</li>
+                    <li>Spring retraction boxes</li>
+                    <li>Zero-breakdown cable management</li>
+                    <li>Fanuc/Kuka/Mitsubishi compatible</li>
+                </ul>
+                <p><strong>Other Expertise:</strong></p>
+                <ul>
+                    <li>Robot maintenance & spares</li>
+                    <li>Welding/laser automation cells</li>
+                    <li>CNC machine tending</li>
+                    <li>PLC/HMI programming</li>
+                </ul>
+                <a href="./pictures/Robot Dress pack by D K Robotics.pdf" download="DK_Robotics_Technical_Specs.pdf" class="btn-download">
+                    <i class='bx bx-download'></i> Download Technical Specs
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="section-title">
+            <h2>Our Leadership Team</h2>
+        </div>
+        
+        <div class="container">
+            <div class="team-member">
+                <img src="./pictures/DR.jpg" alt="Dnyaneshwar Renge">
+                <div class="member-info">
+                    <h2>Dnyaneshwar Renge</h2>
+                    <h5>Expert In Robot Programming</h5>
+                    <p>
+                        As our lead robotics programmer, Dnyaneshwar possesses extensive knowledge and experience in programming robots to perform specific tasks. With a deep understanding of programming languages, robotics principles, and software frameworks related to robot control and automation, he ensures our solutions are precisely tailored to each client's needs.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="team-member">
+                <img src="./pictures/KGB.png" alt="Project Management Expert">
+                <div class="member-info">
+                    <h2>Bharti Bonde</h2>
+                    <h5>Project Management</h5>
+                    <p>
+                        Our project management expert oversees the planning, organization, and control of resources to achieve specific project goals within defined constraints. With expertise in time, budget, and scope management, KBG ensures every automation project is delivered successfully with the desired outcomes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="section-title">
+            <h2>Our Values & Services</h2>
+        </div>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <h5>Vision And Mission</h5>
+                <ul>
+                    <li>Our vision is to become a market leader in providing Robotics programming and Maintenance Service.</li>
+                    <li>Mission is "Delivering Excellence" to get best-in-class customer service to have long term relationship.</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h5>Core Values</h5>
+                <ul>
+                    <li>We satisfy and delight our customers</li>
+                    <li>We promote team member growth and happiness</li>
+                    <li>We win as a team</li>
+                </ul>
+            </div>
+            
+            <div class="service-card">
+                <h5>DK Robotics We Offers</h5>
+                <ul>
+                    <li>Robotics Turnkey Automation Solutions</li>
+                    <li>Robotics Programming Services</li>
+                    <li>Robot Maintenance Services</li>
+                    <li>Installation and commissioning of automation cells</li>
+                    <li>Robot Spare Parts (Used / New)</li>
+                    <li>Fabrication and machining of automation cell equipment</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <p>Ready to Automate Your Industrial Processes?</p>
+        <a href="contact-us.html" class="cta-btn">Contact Us Today</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="about-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="./pictures/dk.png" alt="DK Robotics Logo">
+                </a>
+                <p class="footer-about">
+                    Founded in 2022, DK Robotics delivers affordable automation solutions with excellent customer service.
+                </p>
+                <div class="footer-social">
+                    <a href="https://dkrobotics.in/" aria-label="Website"><i class="fas fa-globe"></i></a>
+                    <a href="https://linkedin.com/company/dk-robotics" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://roboprogramming.blogspot.com/" aria-label="Blog"><i class="fab fa-blogger"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="links-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about us.html">About Us</a></li>
+                        <li><a href="dresspack.html">Dress Pack</a></li>
+                        <li><a href="contact us.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="links-column">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-map">
+                <h4>Our Location</h4>
+                <div class="map-container">
+                    <iframe 
+                            src="https://maps.google.com/maps?q=DK%20ROBOTICS%20AUTOMATION&output=embed"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            aria-label="DK Robotics Location Map"
+                            class="responsive-map">
+                        </iframe>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 DK Robotics Automation. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        
+            document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const menuWrapper = document.querySelector('.main-menu-wrapper');
+            
+            menuToggle.addEventListener('click', function() {
+                menuWrapper.classList.toggle('active');
+            });
+            
+            // Close menu when clicking on links
+            document.querySelectorAll('.main-menu a').forEach(link => {
+                link.addEventListener('click', () => {
+                    menuWrapper.classList.remove('active');
+                });
+            });
+
+        // Sticky header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (header) {
+                header.classList.toggle('shrink', window.scrollY > 50);
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>
+
