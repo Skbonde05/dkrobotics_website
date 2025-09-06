@@ -1,63 +1,77 @@
-DK Robotics Company Website 🌐
+<p align="center">
+  <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/512/external-robotics-automation-technology-flaticons-flat-flat-icons.png" alt="DK Robotics" width="120"/>
+</p>
 
-This repository hosts the DK Robotics Company website, developed during an internship at DK Robotics.
-It serves as the company’s online presence and includes sections like Home, About Us, Projects, Gallery, Contact Us, Terms, and Privacy Policy.
+<h1 align="center">🤖 DK Robotics Company Website 🌐</h1>
 
-🔗 Live Demo: dkrobotics-website.web.app
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt="HTML"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt="CSS"></a>
+  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"><img src="https://img.shields.io/badge/JavaScript-ES6-yellow?logo=javascript" alt="JavaScript"></a>
+  <a href="https://firebase.google.com/"><img src="https://img.shields.io/badge/Hosting-Firebase-orange?logo=firebase" alt="Firebase"></a>
+</p>
 
-📖 Project Overview
+<p align="center">
+  <a href="https://dkrobotics-website.web.app/" target="_blank">
+    <img src="https://img.shields.io/badge/🌐 Live Demo-Visit%20Now-brightgreen?style=for-the-badge" alt="Live Demo"/>
+  </a>
+</p>
 
-The website is a modern, static web project crafted using HTML, CSS, and JavaScript, with a focus on clean design and an intuitive user experience.
-It showcases DK Robotics’ offerings, gallery, and contact information.
+---
 
-✨ Features
+## 📖 Project Overview  
 
-Responsive Design – Accessible across devices (desktop, tablet, mobile).
+The **DK Robotics Company Website** is a **modern, static web project** developed during an internship at DK Robotics.  
+It serves as the company’s **official online presence**, providing information about projects, gallery, products, and contact details.  
 
-Structured Web Pages:
+Built with **HTML, CSS, and JavaScript**, the site is designed for **clean UI, responsive design, and user-friendly navigation**.  
 
-index.html → Homepage
+---
 
-about us.html → Company details
+## ✨ Features  
 
-projects.html → Showcase of robotic solutions
+✅ **Responsive Design** – Works across desktop, tablet, and mobile  
+✅ **Structured Pages** – Multiple sections for company details and portfolio  
+✅ **Error Handling** – Custom 404 and error pages  
+✅ **Firebase Hosting** – Deployed with Firebase for fast and secure access  
 
-gallery.html → Image portfolio
+### 📂 Pages Included  
+- `index.html` → Homepage  
+- `about us.html` → Company details  
+- `projects.html` → Showcase of robotic solutions  
+- `gallery.html` → Image portfolio  
+- `contact us.html` → Inquiry form  
+- `dresspack.html` → Product/marketing showcase  
+- `404.html`, `error.html` → Error pages  
+- `terms.html`, `privacypolicy.html` → Legal documentation  
 
-contact us.html → Inquiry form
+### 📁 Asset Organization  
+- `fonts/` → Custom typography  
+- `styles/` → CSS files (`app.css`, `grid.css`)  
+- `gallery/`, `pictures/` → Image assets  
+- `app.js`, `srcp.js` → JavaScript logic  
+- `.firebaserc`, `firebase.json` → Firebase hosting configuration  
 
-dresspack.html → Product/marketing showcase
+---
 
-404.html, error.html → Error handling pages
+## 🛠 Tech Stack & Tools  
 
-terms.html, privacypolicy.html → Legal documentation
+<p align="center">
+  <img src="https://img.shields.io/badge/Frontend-HTML-orange" alt="HTML">
+  <img src="https://img.shields.io/badge/Styling-CSS-blue" alt="CSS">
+  <img src="https://img.shields.io/badge/Logic-JavaScript-yellow" alt="JS">
+  <img src="https://img.shields.io/badge/Hosting-Firebase-orange" alt="Firebase">
+</p>
 
-Asset Organization:
+---
 
-fonts/ → Custom typography
+## 🚀 Future Enhancements  
 
-styles/ + app.css, grid.css → Styling
+- 🎨 Add animations & transitions for better UX  
+- 📧 Backend/email integration for **contact form**  
+- 🔍 SEO optimization with **meta tags & sitemap**  
+- ⚡ Optimize **CSS & JS performance**  
+- 🔄 Continuous Deployment (**GitHub → Firebase**)  
 
-gallery/, pictures/ → Image assets
-
-app.js, srcp.js → JavaScript logic
-
-Firebase Hosting → Configured with .firebaserc and firebase.json
-
-🛠 Tech Stack & Tools
-
-Frontend: HTML, CSS, JavaScript
-
-Hosting: Firebase
-
-🚀 Future Enhancements
-
-✨ Add animations and transitions for better UI/UX
-
-📧 Connect contact form to a backend/email service
-
-🔍 SEO optimization (meta tags, sitemap)
-
-⚡ Optimize CSS/JS for performance
-
-🔄 Continuous Deployment (GitHub → Firebase)
+---
