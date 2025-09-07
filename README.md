@@ -1,10 +1,7 @@
-<p align="center">
-  <img src="https://img.icons8.com/external-flaticons-flat-flat-icons/512/external-robotics-automation-technology-flaticons-flat-flat-icons.png" alt="DK Robotics" width="120"/>
-</p>
 
-<h1 align="center">🤖 DK Robotics Company Website 🌐</h1>
+<h1> <img src="pictures/dk.png" alt="Projects Section" width="40"/> DK Robotics Company Website</h1>
 
-<p align="center">
+<p>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue" alt="License"></a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"><img src="https://img.shields.io/badge/HTML-5-orange?logo=html5" alt="HTML"></a>
   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS"><img src="https://img.shields.io/badge/CSS-3-blue?logo=css3" alt="CSS"></a>
@@ -12,7 +9,7 @@
   <a href="https://firebase.google.com/"><img src="https://img.shields.io/badge/Hosting-Firebase-orange?logo=firebase" alt="Firebase"></a>
 </p>
 
-<p align="center">
+<p>
   <a href="https://dkrobotics-website.web.app/" target="_blank">
     <img src="https://img.shields.io/badge/🌐 Live Demo-Visit%20Now-brightgreen?style=for-the-badge" alt="Live Demo"/>
   </a>
@@ -28,6 +25,11 @@ It serves as the company’s **official online presence**, providing information
 Built with **HTML, CSS, and JavaScript**, the site is designed for **clean UI, responsive design, and user-friendly navigation**.  
 
 ---
+
+### 🏠 Homepage  
+<p align="center">
+  <img src="website_photos/1.png" alt="Homepage" width="800"/>
+</p>  
 
 ## ✨ Features  
 
